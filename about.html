@@ -1,473 +1,471 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-mono-chrome">
-    <title>홍대 유흥 후기 기반 정보 체계 — 모임 주최자를 위한 실무 판단 기준</title>
-    <meta name="description" content="홍대 유흥 후기를 바탕으로, 모임 주최자가 눈으로 확인할 수 있는 요소와 사전 문의가 필요한 항목을 분류합니다. 인원, 시점, 목적에 따라 달라지는 우선순위를 정리해 실무 부담을 줄이는 판단 기준을 제시합니다.">
-    <meta name="keywords" content="홍대 유흥 후기, 홍대 유흥, 홍대 모임, 홍대 나이트, 홍대 술집, 모임 장소 선정 기준">
-    <link rel="canonical" href="https://hongdae-night-zone.node-link.shop/about.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hongdae-night-zone.node-link.shop/about.html">
-    <meta property="og:title" content="홍대 유흥 후기 기반 정보 체계 — 모임 주최자를 위한 실무 판단 기준">
-    <meta property="og:description" content="홍대 유흥 후기를 바탕으로, 모임 주최자가 눈으로 확인할 수 있는 요소와 사전 문의가 필요한 항목을 분류합니다. 인원, 시점, 목적에 따라 달라지는 우선순위를 정리해 실무 부담을 줄이는 판단 기준을 제시합니다.">
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background-color: #fafafa;
-            letter-spacing: -0.02em;
-        }
-        .r-txt-z6rn {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(250, 250, 250, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding: 0 2rem;
-        }
-        .x-list-3m6u {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .x-list-3m6u-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
-        }
-        .n-main-ohtd {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            text-decoration: none;
-            letter-spacing: -0.03em;
-        }
-        .n-box-0iuz {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-        .n-box-0iuz li a {
-            text-decoration: none;
-            color: #666;
-            font-size: 0.9375rem;
-            font-weight: 400;
-            transition: color 0.2s ease;
-            letter-spacing: -0.02em;
-        }
-        .n-box-0iuz li a:hover {
-            color: #1a1a1a;
-        }
-        .x-btn-k24q {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-        .x-btn-k24q span {
-            display: block;
-            width: 22px;
-            height: 1.5px;
-            background-color: #1a1a1a;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-        @media (max-width: 768px) {
-            .r-txt-z6rn {
-                padding: 0 20px;
-            }
-            .n-box-0iuz {
-                display: none;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                background: #fafafa;
-                flex-direction: column;
-                padding: 1.5rem 2rem;
-                gap: 1.25rem;
-                border-bottom: 1px solid rgba(0,0,0,0.08);
-            }
-            .n-box-0iuz.active {
-                display: flex;
-            }
-            .x-btn-k24q {
-                display: block;
-            }
-        }
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 32px 6rem;
-        }
-        .section-header {
-            margin-bottom: 3.5rem;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 2rem;
-        }
-        .section-header h1 {
-            font-size: 2.75rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            letter-spacing: -0.04em;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-        .section-header p {
-            font-size: 1.125rem;
-            color: #666;
-            max-width: 680px;
-            line-height: 1.7;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 5rem;
-        }
-        .info-card {
-            background: #fff;
-            border: 1px solid #e8e8e8;
-            border-radius: 2px;
-            padding: 2rem;
-            transition: border-color 0.2s ease;
-        }
-        .info-card:hover {
-            border-color: #b0b0b0;
-        }
-        .info-card h3 {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            letter-spacing: -0.03em;
-        }
-        .info-card p {
-            font-size: 0.9375rem;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
-        }
-        .info-card .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #666;
-            background: #f0f0f0;
-            padding: 0.25rem 0.75rem;
-            border-radius: 2px;
-            margin-top: 0.75rem;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-        }
-        .criteria-section {
-            margin-bottom: 5rem;
-        }
-        .criteria-section h2 {
-            font-size: 1.75rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #1a1a1a;
-            display: inline-block;
-        }
-        .criteria-block {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        .criteria-block .col h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .criteria-block .col p {
-            font-size: 0.9375rem;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .criteria-block .col ul {
-            list-style: none;
-            padding: 0;
-        }
-        .criteria-block .col ul li {
-            font-size: 0.9375rem;
-            color: #555;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            line-height: 1.6;
-        }
-        .criteria-block .col ul li:last-child {
-            border-bottom: none;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0 4rem;
-            font-size: 0.9375rem;
-        }
-        .data-table thead {
-            background: #1a1a1a;
-            color: #fafafa;
-        }
-        .data-table th {
-            padding: 1rem 1.25rem;
-            text-align: left;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-        }
-        .data-table td {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid #e8e8e8;
-            color: #444;
-            line-height: 1.6;
-        }
-        .data-table tbody tr:hover {
-            background: #f8f8f8;
-        }
-        .faq-section {
-            margin-bottom: 5rem;
-        }
-        .faq-section h2 {
-            font-size: 1.75rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #1a1a1a;
-            display: inline-block;
-        }
-        .faq-item {
-            border-bottom: 1px solid #e8e8e8;
-            padding: 1.5rem 0;
-        }
-        .faq-item h4 {
-            font-size: 1.0625rem;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.02em;
-        }
-        .faq-item p {
-            font-size: 0.9375rem;
-            color: #555;
-            line-height: 1.7;
-        }
-        footer {
-            border-top: 1px solid #e0e0e0;
-            padding: 2rem 32px;
-            text-align: center;
-            color: #888;
-            font-size: 0.8125rem;
-            letter-spacing: -0.01em;
-        }
-        @media (max-width: 768px) {
-            main {
-                padding: 2.5rem 20px 4rem;
-            }
-            .section-header h1 {
-                font-size: 2rem;
-            }
-            .criteria-block {
-                grid-template-columns: 1fr;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>홍대 유흥 후기 기반 정보 체계 — 모임 주최자를 위한 실무 판단 기준</title>
+ <meta name="description" content="홍대 유흥 후기를 바탕으로, 모임 주최자가 눈으로 확인할 수 있는 요소와 사전 문의가 필요한 항목을 분류합니다. 인원, 시점, 목적에 따라 달라지는 우선순위를 정리해 실무 부담을 줄이는 판단 기준을 제시합니다.">
+ <meta name="keywords" content="홍대 유흥 후기, 홍대 유흥, 홍대 모임, 홍대 나이트, 홍대 술집, 모임 장소 선정 기준">
+ <link rel="canonical" href="https://hongdae-night-zone.node-link.shop/about.html">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://hongdae-night-zone.node-link.shop/about.html">
+ <meta property="og:title" content="홍대 유흥 후기 기반 정보 체계 — 모임 주최자를 위한 실무 판단 기준">
+ <meta property="og:description" content="홍대 유흥 후기를 바탕으로, 모임 주최자가 눈으로 확인할 수 있는 요소와 사전 문의가 필요한 항목을 분류합니다. 인원, 시점, 목적에 따라 달라지는 우선순위를 정리해 실무 부담을 줄이는 판단 기준을 제시합니다.">
+ <style>
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+ line-height: 1.6;
+ color: #1a1a1a;
+ background-color: #fafafa;
+ letter-spacing: -0.02em;
+ }
+ .r-txt-z6rn {
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ background-color: rgba(250, 250, 250, 0.92);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border-bottom: 1px solid rgba(0,0,0,0.08);
+ padding: 0 2rem;
+ }
+ .x-list-3m6u {
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .x-list-3m6u-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 64px;
+ }
+ .n-main-ohtd {
+ font-size: 1.125rem;
+ font-weight: 600;
+ color: #1a1a1a;
+ text-decoration: none;
+ letter-spacing: -0.03em;
+ }
+ .n-box-0iuz {
+ display: flex;
+ list-style: none;
+ gap: 2.5rem;
+ }
+ .n-box-0iuz li a {
+ text-decoration: none;
+ color: #666;
+ font-size: 0.9375rem;
+ font-weight: 400;
+ transition: color 0.2s ease;
+ letter-spacing: -0.02em;
+ }
+ .n-box-0iuz li a:hover {
+ color: #1a1a1a;
+ }
+ .x-btn-k24q {
+ display: none;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 8px;
+ }
+ .x-btn-k24q span {
+ display: block;
+ width: 22px;
+ height: 1.5px;
+ background-color: #1a1a1a;
+ margin: 5px 0;
+ transition: all 0.3s ease;
+ }
+ @media (max-width: 768px) {
+ .r-txt-z6rn {
+ padding: 0 20px;
+ }
+ .n-box-0iuz {
+ display: none;
+ position: absolute;
+ top: 64px;
+ left: 0;
+ right: 0;
+ background: #fafafa;
+ flex-direction: column;
+ padding: 1.5rem 2rem;
+ gap: 1.25rem;
+ border-bottom: 1px solid rgba(0,0,0,0.08);
+ }
+ .n-box-0iuz.active {
+ display: flex;
+ }
+ .x-btn-k24q {
+ display: block;
+ }
+ }
+ main {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 4rem 32px 6rem;
+ }
+ .section-header {
+ margin-bottom: 3.5rem;
+ border-bottom: 1px solid #e0e0e0;
+ padding-bottom: 2rem;
+ }
+ .section-header h1 {
+ font-size: 2.75rem;
+ font-weight: 300;
+ color: #1a1a1a;
+ letter-spacing: -0.04em;
+ line-height: 1.3;
+ margin-bottom: 1rem;
+ }
+ .section-header p {
+ font-size: 1.125rem;
+ color: #666;
+ max-width: 680px;
+ line-height: 1.7;
+ }
+ .info-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: 2rem;
+ margin-bottom: 5rem;
+ }
+ .info-card {
+ background: #fff;
+ border: 1px solid #e8e8e8;
+ border-radius: 2px;
+ padding: 2rem;
+ transition: border-color 0.2s ease;
+ }
+ .info-card:hover {
+ border-color: #b0b0b0;
+ }
+ .info-card h3 {
+ font-size: 1.25rem;
+ font-weight: 500;
+ margin-bottom: 1rem;
+ color: #1a1a1a;
+ letter-spacing: -0.03em;
+ }
+ .info-card p {
+ font-size: 0.9375rem;
+ color: #555;
+ line-height: 1.7;
+ margin-bottom: 0.75rem;
+ }
+ .info-card .tag {
+ display: inline-block;
+ font-size: 0.75rem;
+ font-weight: 500;
+ color: #666;
+ background: #f0f0f0;
+ padding: 0.25rem 0.75rem;
+ border-radius: 2px;
+ margin-top: 0.75rem;
+ letter-spacing: 0.02em;
+ text-transform: uppercase;
+ }
+ .criteria-section {
+ margin-bottom: 5rem;
+ }
+ .criteria-section h2 {
+ font-size: 1.75rem;
+ font-weight: 300;
+ color: #1a1a1a;
+ letter-spacing: -0.03em;
+ margin-bottom: 2rem;
+ padding-bottom: 0.75rem;
+ border-bottom: 2px solid #1a1a1a;
+ display: inline-block;
+ }
+ .criteria-block {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 2rem;
+ margin-top: 1.5rem;
+ }
+ .criteria-block .col h4 {
+ font-size: 1rem;
+ font-weight: 600;
+ color: #1a1a1a;
+ margin-bottom: 1rem;
+ letter-spacing: -0.02em;
+ }
+ .criteria-block .col p {
+ font-size: 0.9375rem;
+ color: #555;
+ line-height: 1.7;
+ margin-bottom: 1rem;
+ }
+ .criteria-block .col ul {
+ list-style: none;
+ padding: 0;
+ }
+ .criteria-block .col ul li {
+ font-size: 0.9375rem;
+ color: #555;
+ padding: 0.5rem 0;
+ border-bottom: 1px solid #f0f0f0;
+ line-height: 1.6;
+ }
+ .criteria-block .col ul li:last-child {
+ border-bottom: none;
+ }
+ .data-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 2rem 0 4rem;
+ font-size: 0.9375rem;
+ }
+ .data-table thead {
+ background: #1a1a1a;
+ color: #fafafa;
+ }
+ .data-table th {
+ padding: 1rem 1.25rem;
+ text-align: left;
+ font-weight: 500;
+ letter-spacing: -0.02em;
+ }
+ .data-table td {
+ padding: 1rem 1.25rem;
+ border-bottom: 1px solid #e8e8e8;
+ color: #444;
+ line-height: 1.6;
+ }
+ .data-table tbody tr:hover {
+ background: #f8f8f8;
+ }
+ .faq-section {
+ margin-bottom: 5rem;
+ }
+ .faq-section h2 {
+ font-size: 1.75rem;
+ font-weight: 300;
+ color: #1a1a1a;
+ letter-spacing: -0.03em;
+ margin-bottom: 2rem;
+ border-bottom: 2px solid #1a1a1a;
+ display: inline-block;
+ }
+ .faq-item {
+ border-bottom: 1px solid #e8e8e8;
+ padding: 1.5rem 0;
+ }
+ .faq-item h4 {
+ font-size: 1.0625rem;
+ font-weight: 500;
+ color: #1a1a1a;
+ margin-bottom: 0.75rem;
+ letter-spacing: -0.02em;
+ }
+ .faq-item p {
+ font-size: 0.9375rem;
+ color: #555;
+ line-height: 1.7;
+ }
+ footer {
+ border-top: 1px solid #e0e0e0;
+ padding: 2rem 32px;
+ text-align: center;
+ color: #888;
+ font-size: 0.8125rem;
+ letter-spacing: -0.01em;
+ }
+ @media (max-width: 768px) {
+ main {
+ padding: 2.5rem 20px 4rem;
+ }
+ .section-header h1 {
+ font-size: 2rem;
+ }
+ .criteria-block {
+ grid-template-columns: 1fr;
+ }
+ .info-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <nav class="r-txt-z6rn">
-        <div class="x-list-3m6u">
-            <div class="x-list-3m6u-inner">
-                <a href="/" class="n-main-ohtd">HONGDAE NIGHT ZONE</a>
-                <ul class="n-box-0iuz" id="navMenu">
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info">정보</a></li>
-                    <li><a href="/review">후기</a></li>
-                    <li><a href="/guide">가이드</a></li>
-                </ul>
-                <button class="x-btn-k24q" id="menuToggle" aria-label="메뉴 열기">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+ <nav class="r-txt-z6rn">
+ <div class="x-list-3m6u">
+ <div class="x-list-3m6u-inner">
+ <a href="/" class="n-main-ohtd">HONGDAE NIGHT ZONE</a>
+ <ul class="n-box-0iuz" id="navMenu">
+ <li><a href="/">홈</a></li>
+ <li><a href="/info">정보</a></li>
+ <li><a href="/review">후기</a></li>
+ <li><a href="/guide">가이드</a></li>
+ </ul>
+ <button class="x-btn-k24q" id="menuToggle" aria-label="메뉴 열기">
+ <span></span>
+ <span></span>
+ <span></span>
+ </button>
+ </div>
+ </div>
+ </nav>
 
-    <main>
-        <section class="section-header">
-            <h1>홍대 유흥 후기 기반 정보 체계</h1>
-            <p>모임 주최자가 실무에서 마주하는 정보 비대칭을 해소하기 위해, 홍대 유흥 후기 데이터를 정량적·정성적으로 분석한 판단 기준입니다. 시각 확인 가능 요소와 사전 문의 필요 항목을 분류하고, 인원 규모·방문 시점·모임 목적에 따라 우선순위가 어떻게 재편되는지 제시합니다.</p>
-        </section>
+ <main>
+ <section class="section-header">
+ <h1>홍대 유흥 후기 기반 정보 체계</h1>
+ <p>모임 주최자가 실무에서 마주하는 정보 비대칭을 해소하기 위해, 홍대 유흥 후기 데이터를 정량적·정성적으로 분석한 판단 기준입니다. 시각 확인 가능 요소와 사전 문의 필요 항목을 분류하고, 인원 규모·방문 시점·모임 목적에 따라 우선순위가 어떻게 재편되는지 제시합니다.</p>
+ </section>
 
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>시각 확인 가능 지표</h3>
-                <p>현장 방문 없이도 온라인상에서 교차 검증 가능한 항목입니다. 다수 후기에서 공통적으로 등장하는 공간 평면 사진, 좌석 배치도, 실제 조명 밝기를 촬영한 영상 자료를 기준으로 객관적 판단이 가능합니다.</p>
-                <p>테이블 간격, 스탠딩 공간 면적, 단체석 분리 여부는 사진만으로도 충분히 판별 가능하며, 화장실 접근성과 환기 상태는 간접적으로 추론할 수 있는 환경 정보를 제공합니다.</p>
-                <span class="tag">시각 검증 가능</span>
-            </div>
+ <div class="info-grid">
+ <div class="info-card">
+ <h3>시각 확인 가능 지표</h3>
+ <p>현장 방문 없이도 온라인상에서 교차 검증 가능한 항목입니다. 다수 후기에서 공통적으로 등장하는 공간 평면 사진, 좌석 배치도, 실제 조명 밝기를 촬영한 영상 자료를 기준으로 객관적 판단이 가능합니다.</p>
+ <p>테이블 간격, 스탠딩 공간 면적, 단체석 분리 여부는 사진만으로도 충분히 판별 가능하며, 화장실 접근성과 환기 상태는 간접적으로 추론할 수 있는 환경 정보를 제공합니다.</p>
+ <span class="tag">시각 검증 가능</span>
+ </div>
 
-            <div class="info-card">
-                <h3>사전 문의 필수 항목</h3>
-                <p>실시간으로 변동하는 정보는 사전 문의 없이 확정할 수 없습니다. 당일 예약 가능한 인원캡, 프라이빗 룸 이용 조건, 최소 주문 금액 정책은 후기만으로 판단하기 어렵습니다.</p>
-                <p>특히 주말과 평일의 운영 방식이 상이한 업장의 경우, 동일 장소라도 요일별로 수용 가능 인원과 서비스 구성이 달라집니다. 이는 반드시 당일 전화 확인을 통해 검증해야 합니다.</p>
-                <span class="tag">사전 문의 필요</span>
-            </div>
+ <div class="info-card">
+ <h3>사전 문의 필수 항목</h3>
+ <p>실시간으로 변동하는 정보는 사전 문의 없이 확정할 수 없습니다. 당일 예약 가능한 인원캡, 프라이빗 룸 이용 조건, 최소 주문 금액 정책은 후기만으로 판단하기 어렵습니다.</p>
+ <p>특히 주말과 평일의 운영 방식이 상이한 업장의 경우, 동일 장소라도 요일별로 수용 가능 인원과 서비스 구성이 달라집니다. 이는 반드시 당일 전화 확인을 통해 검증해야 합니다.</p>
+ <span class="tag">사전 문의 필요</span>
+ </div>
 
-            <div class="info-card">
-                <h3>인원 규모별 우선순위</h3>
-                <p>4인 이하 소규모 모임은 좌석의 독립성과 대화 음량 허용 범위가 중요해집니다. 8인 이상 중대형 모임은 전체 대여 가능 여부와 그룹 좌석의 연결 배치 가능성이 우선 검토됩니다.</p>
-                <p>15인을 초과하는 대규모 모임은 음향 장비 지원, 별도 입장 동선 확보, 주변 테이블과의 이격 거리 등 물리적 분리 요건이 추가로 필요한 항목으로 부상합니다.</p>
-                <span class="tag">인원 기반 분류</span>
-            </div>
+ <div class="info-card">
+ <h3>인원 규모별 우선순위</h3>
+ <p>4인 이하 소규모 모임은 좌석의 독립성과 대화 음량 허용 범위가 중요해집니다. 8인 이상 중대형 모임은 전체 대여 가능 여부와 그룹 좌석의 연결 배치 가능성이 우선 검토됩니다.</p>
+ <p>15인을 초과하는 대규모 모임은 음향 장비 지원, 별도 입장 동선 확보, 주변 테이블과의 이격 거리 등 물리적 분리 요건이 추가로 필요한 항목으로 부상합니다.</p>
+ <span class="tag">인원 기반 분류</span>
+ </div>
 
-            <div class="info-card">
-                <h3>시점별 변동성</h3>
-                <p>금요일 20시와 토요일 23시는 동일 업장에서도 완전히 다른 경험을 낳습니다. 주말 피크 타임에는 좌석 회전율이 빨라지고 서비스 응답 시간이 늘어나며, 소음 레벨이 상승하여 대화 중심 모임에는 적합하지 않은 환경으로 변모합니다.</p>
-                <p>평일 얼리 나이트 시간대는 상대적으로 안정적이며, 주최자의 세부 요청 사항을 반해줄 여유가 있는 운영진이 많다는 점에서 협상력이 높은 시간대입니다.</p>
-                <span class="tag">시간대 의존</span>
-            </div>
+ <div class="info-card">
+ <h3>시점별 변동성</h3>
+ <p>금요일 20시와 토요일 23시는 동일 업장에서도 완전히 다른 경험을 낳습니다. 주말 피크 타임에는 좌석 회전율이 빨라지고 서비스 응답 시간이 늘어나며, 소음 레벨이 상승하여 대화 중심 모임에는 적합하지 않은 환경으로 변모합니다.</p>
+ <p>평일 얼리 나이트 시간대는 상대적으로 안정적이며, 주최자의 세부 요청 사항을 반해줄 여유가 있는 운영진이 많다는 점에서 협상력이 높은 시간대입니다.</p>
+ <span class="tag">시간대 의존</span>
+ </div>
 
-            <div class="info-card">
-                <h3>목적 기반 필터</h3>
-                <p>비즈니스 미팅, 생일 이벤트, 캐쥬얼 네트워킹 등 모임의 목적은 장소 선정의 최상위기준입니다. 네트워킹 목적은 인원 유동성을 수용할 수 있는 스탠딩 중심 공간이 필요하고, 에정된 대화 중심 모임은 소음 제어가 가능한 좌석형 구역이 필수적입니다.</p>
-                <p>이벤트성 모임은 케이크 반입 정책, 사운드 시스템 활용, 장식 시간 확보 등 부가 조건이 중요 변수로 작용합니다.</p>
-                <span class="tag">목적 중심</span>
-            </div>
+ <div class="info-card">
+ <h3>목적 기반 필터</h3>
+ <p>비즈니스 미팅, 생일 이벤트, 캐쥬얼 네트워킹 등 모임의 목적은 장소 선정의 최상위기준입니다. 네트워킹 목적은 인원 유동성을 수용할 수 있는 스탠딩 중심 공간이 필요하고, 에정된 대화 중심 모임은 소음 제어가 가능한 좌석형 구역이 필수적입니다.</p>
+ <p>이벤트성 모임은 케이크 반입 정책, 사운드 시스템 활용, 장식 시간 확보 등 부가 조건이 중요 변수로 작용합니다.</p>
+ <span class="tag">목적 중심</span>
+ </div>
 
-            <div class="info-card">
-                <h3>후기 데이터 신뢰도</h3>
-                <p>홍대 유흥 후기는 게시 시점과 방문 시설 간 시간 차, 작성자의 경험치 편차, 그리고 업장의 지속적 리뉴얼 여부에 따라 정보 유효 기간이 달라집니다. 6개월 이상 지난 후기는 인테리어 변경, 메뉴 개편, 운영 정책 변화를 반영하지 못할 가능성이 높습니다.</p>
-                <p>최신 후기와 과거 후기를 교차 분석할 때, 부정적 패턴의 일관성과 긍정적 요소의 지속성을 분리하여 판단하는 것이 정확한 정보를 도출하는 방법입니다.</p>
-                <span class="tag">데이터 신뢰성</span>
-            </div>
-        </div>
+ <div class="info-card">
+ <h3>후기 데이터 신뢰도</h3>
+ <p>홍대 유흥 후기는 게시 시점과 방문 시설 간 시간 차, 작성자의 경험치 편차, 그리고 업장의 지속적 리뉴얼 여부에 따라 정보 유효 기간이 달라집니다. 6개월 이상 지난 후기는 인테리어 변경, 메뉴 개편, 운영 정책 변화를 반영하지 못할 가능성이 높습니다.</p>
+ <p>최신 후기와 과거 후기를 교차 분석할 때, 부정적 패턴의 일관성과 긍정적 요소의 지속성을 분리하여 판단하는 것이 정확한 정보를 도출하는 방법입니다.</p>
+ <span class="tag">데이터 신뢰성</span>
+ </div>
+ </div>
 
-        <section class="criteria-section">
-            <h2>확인해야 할 기준</h2>
-            <div class="criteria-block">
-                <div class="col">
-                    <h4>눈으로 확인 가능한 요소</h4>
-                    <p>다음 항목는 후기 사진, 영상, 지도 로드뷰를 통해 방문 전 80% 이상 검증할 수 있습니다. 실제 방문 없이도 모임의 성격과 부합 여부를 1차 필터링할 때 사용하는 요소입니다.</p>
-                    <ul>
-                        <li>실내 면적 대비 좌석 밀도 비율</li>
-                        <li>입구에서 메인홀까지의 동선 구조</li>
-                        <li>조명 색온도 및 밝기 분포</li>
-                        <li>창문 유무와 자연 환기 가능성</li>
-                        <li>음료 메뉴판의 가격대 표기</li>
-                        <li>벽면 마감재 및 흡음 구조</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>사전 문의가 필요한 요소</h4>
-                    <p>다음 항목은 시기, 요청, 당일 혼잡도에 따라 실시간으로 변하기 때문에 반드시 전화 또는 메시지로 확인해야 합니다. 후기에서 언급된 정보라 하더라도 1주일 이내 업데이트가 아니라면 재확인을 권장합니다.</p>
-                    <ul>
-                        <li>당일 예약 가능 인원 수 상한</li>
-                        <li>프라이빗 룸의 대여 비용 및 시간 제한</li>
-                        <li>외부 음식 반입 가능 여부</li>
-                        <li>음향 시스템 외부 연결 지원</li>
-                        <li>주말 필수 합석 정책 유무</li>
-                        <li>단체 주문 시 선결제 조건</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+ <section class="criteria-section">
+ <h2>확인해야 할 기준</h2>
+ <div class="criteria-block">
+ <div class="col">
+ <h4>눈으로 확인 가능한 요소</h4>
+ <p>다음 항목는 후기 사진, 영상, 지도 로드뷰를 통해 방문 전 80% 이상 검증할 수 있습니다. 실제 방문 없이도 모임의 성격과 부합 여부를 1차 필터링할 때 사용하는 요소입니다.</p>
+ <ul>
+ <li>실내 면적 대비 좌석 밀도 비율</li>
+ <li>입구에서 메인홀까지의 동선 구조</li>
+ <li>조명 색온도 및 밝기 분포</li>
+ <li>창문 유무와 자연 환기 가능성</li>
+ <li>음료 메뉴판의 가격대 표기</li>
+ <li>벽면 마감재 및 흡음 구조</li>
+ </ul>
+ </div>
+ <div class="col">
+ <h4>사전 문의가 필요한 요소</h4>
+ <p>다음 항목은 시기, 요청, 당일 혼잡도에 따라 실시간으로 변하기 때문에 반드시 전화 또는 메시지로 확인해야 합니다. 후기에서 언급된 정보라 하더라도 1주일 이내 업데이트가 아니라면 재확인을 권장합니다.</p>
+ <ul>
+ <li>당일 예약 가능 인원 수 상한</li>
+ <li>프라이빗 룸의 대여 비용 및 시간 제한</li>
+ <li>외부 음식 반입 가능 여부</li>
+ <li>음향 시스템 외부 연결 지원</li>
+ <li>주말 필수 합석 정책 유무</li>
+ <li>단체 주문 시 선결제 조건</li>
+ </ul>
+ </div>
+ </div>
+ </section>
 
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>상황</th>
-                    <th>인원 규모</th>
-                    <th>우선 확인 항목</th>
-                    <th>권장 시간대</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>비즈니스 미팅</td>
-                    <td>4-6인</td>
-                    <td>소음 제어 구역, 좌석 프라이버시</td>
-                    <td>평일 18:00-20:00</td>
-                </tr>
-                <tr>
-                    <td>과연 네트워킹</td>
-                    <td>10-15인</td>
-                    <td>스탠딩 공간 확보, 바 접근성</td>
-                    <td>목요일 19:00-22:00</td>
-                </tr>
-                <tr>
-                    <td>생일 이벤트</td>
-                    <td>8-12인</td>
-                    <td>케이크 반입, 사진 조명, 단체석</td>
-                    <td>금요일 20:00-23:00</td>
-                </tr>
-                <tr>
-                    <td>캐쥬얼 모임</td>
-                    <td>5-8인</td>
-                    <td>음료 다양성, 분위기 개방감</td>
-                    <td>토요일 21:00 이후</td>
-                </tr>
-            </tbody>
-        </table>
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>상황</th>
+ <th>인원 규모</th>
+ <th>우선 확인 항목</th>
+ <th>권장 시간대</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>비즈니스 미팅</td>
+ <td>4-6인</td>
+ <td>소음 제어 구역, 좌석 프라이버시</td>
+ <td>평일 18:00-20:00</td>
+ </tr>
+ <tr>
+ <td>과연 네트워킹</td>
+ <td>10-15인</td>
+ <td>스탠딩 공간 확보, 바 접근성</td>
+ <td>목요일 19:00-22:00</td>
+ </tr>
+ <tr>
+ <td>생일 이벤트</td>
+ <td>8-12인</td>
+ <td>케이크 반입, 사진 조명, 단체석</td>
+ <td>금요일 20:00-23:00</td>
+ </tr>
+ <tr>
+ <td>캐쥬얼 모임</td>
+ <td>5-8인</td>
+ <td>음료 다양성, 분위기 개방감</td>
+ <td>토요일 21:00 이후</td>
+ </tr>
+ </tbody>
+ </table>
 
-        <section class="faq-section">
-            <h2>자주 묻는 질문</h2>
-            <div class="faq-item">
-                <h4>홍대 유흥 후기만으로 장소를 결정해도 되나요?</h4>
-                <p>후기는 참고 자료로는 유용하지만, 실제 경험은 방문 당시 인원 분포와 시간대, 현장 운영 정책에 따라 크게 달라집니다. 특히 주말과 평일의 환경 차이가 큰 홍대 지역 특성상, 후기가 양호하더라도 동일한 시간대에 방문하지 않으면 기대했던 경험과 다른 결과를 얻을 수 있습니다. 따라서 최종 결정 전 반드시 해당 업장에 전화를 통해 당일 상황을 확인하는 절차가 필요합니다.</p>
-            </div>
-            <div class="faq-item">
-                <h4>사전 답사 없이 장소를 확정하는 방법은 무엇인가요?</h4>
-                <p>가장 신뢰할 수 있는 방법은 2주 이내에 작성된 후기 중에서도 사진이 풍부하고 구체적인 공간 설명을 포함한 후기들을 교차 검증하는 것입니다. 또한 인스타그램에서 지역 태그를 검색하여 실시간으로 업로드되는 사진과 스토리를 통해 현장의 현재 상태를 파악할 수 있습니다. 여기에 업장 공식 계정의 최근 게시물을 확인하면 리뉴얼이나 메뉴 변경 여부를 사전에 알 수 있습니다.</p>
-            </div>
-            <div class="faq-item">
-                <h4>인원이 갑자기 변동되었을 때 대처 방법은?</h4>
-                <p>홍대 유흥 업장은 주말의 경우 예약 인원보다 실제 도착 인원이 적거나 많아지면 테이블 배치가 변경되거나 대기 시간이 발생할 수 있습니다. 최초 예약 시점에 인원 변동 가능성을 미리 언급하고, 여유 2-3명분의 좌석을 추가 확보할 수 있는지 확인하는 것이 바람직합니다. 급작스러운 인원 증가에는 인근 대체 업장 리스트를 미리 준비해 두는 것이 실무적 대안입니다.</p>
-            </div>
-            <div class="faq-item">
-                <h4>소음이 민감한 모임에 적합한 홍대 장소는 어떻게 찾나요?</h4>
-                <p>홍대 주요 거리에서 한 블록 이상 벗어난 골목 지역, 혹은 2층 이상에 위치한 업장들이 상대적으로 소음이 제어되는 경향이 있습니다. 후기에서 '대화하기 좋았다', '음량이 적당했다'라는 멘트가 반복되는 업장을 우선 필터하고, 운영 시간이 23시 이전에 마감되는 곳은 소음 관리에 더 신경을 쓰는 업장일 가능성이 높습니다.</p>
-            </div>
-        </section>
-    </main>
+ <section class="faq-section">
+ <h2>자주 묻는 질문</h2>
+ <div class="faq-item">
+ <h4>홍대 유흥 후기만으로 장소를 결정해도 되나요?</h4>
+ <p>후기는 참고 자료로는 유용하지만, 실제 경험은 방문 당시 인원 분포와 시간대, 현장 운영 정책에 따라 크게 달라집니다. 특히 주말과 평일의 환경 차이가 큰 홍대 지역 특성상, 후기가 양호하더라도 동일한 시간대에 방문하지 않으면 기대했던 경험과 다른 결과를 얻을 수 있습니다. 따라서 최종 결정 전 반드시 해당 업장에 전화를 통해 당일 상황을 확인하는 절차가 필요합니다.</p>
+ </div>
+ <div class="faq-item">
+ <h4>사전 답사 없이 장소를 확정하는 방법은 무엇인가요?</h4>
+ <p>가장 신뢰할 수 있는 방법은 2주 이내에 작성된 후기 중에서도 사진이 풍부하고 구체적인 공간 설명을 포함한 후기들을 교차 검증하는 것입니다. 또한 인스타그램에서 지역 태그를 검색하여 실시간으로 업로드되는 사진과 스토리를 통해 현장의 현재 상태를 파악할 수 있습니다. 여기에 업장 공식 계정의 최근 게시물을 확인하면 리뉴얼이나 메뉴 변경 여부를 사전에 알 수 있습니다.</p>
+ </div>
+ <div class="faq-item">
+ <h4>인원이 갑자기 변동되었을 때 대처 방법은?</h4>
+ <p>홍대 유흥 업장은 주말의 경우 예약 인원보다 실제 도착 인원이 적거나 많아지면 테이블 배치가 변경되거나 대기 시간이 발생할 수 있습니다. 최초 예약 시점에 인원 변동 가능성을 미리 언급하고, 여유 2-3명분의 좌석을 추가 확보할 수 있는지 확인하는 것이 바람직합니다. 급작스러운 인원 증가에는 인근 대체 업장 리스트를 미리 준비해 두는 것이 실무적 대안입니다.</p>
+ </div>
+ <div class="faq-item">
+ <h4>소음이 민감한 모임에 적합한 홍대 장소는 어떻게 찾나요?</h4>
+ <p>홍대 주요 거리에서 한 블록 이상 벗어난 골목 지역, 혹은 2층 이상에 위치한 업장들이 상대적으로 소음이 제어되는 경향이 있습니다. 후기에서 '대화하기 좋았다', '음량이 적당했다'라는 멘트가 반복되는 업장을 우선 필터하고, 운영 시간이 23시 이전에 마감되는 곳은 소음 관리에 더 신경을 쓰는 업장일 가능성이 높습니다.</p>
+ </div>
+ </section>
+ </main>
 
-    <footer>
-        <p>© 2025 Hongdae Night Zone. 정보는 참고용이며, 방문 전 반드시 해당 업장에 최신 상황을 확인하세요.</p>
-    </footer>
+ <footer>
+ <p>© 2025 Hongdae Night Zone. 정보는 참고용이며, 방문 전 반드시 해당 업장에 최신 상황을 확인하세요.</p>
+ </footer>
 
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
-        });
-    </script>
+ <script>
+ document.getElementById('menuToggle').addEventListener('click', function() {
+ document.getElementById('navMenu').classList.toggle('active');
+ });
+ </script>
 </body>
 </html>
